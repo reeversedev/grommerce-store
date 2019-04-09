@@ -1,0 +1,22 @@
+.navbar {
+  background-color: rgba(28, 34, 36, 0.8);
+  font-size: 14px;
+}
+
+.navbar .navbar-brand {
+  display: block;
+  padding: 10px 28px;
+  border-right: 1px solid hsla(0, 0%, 100%, 0.08);
+}
+
+.navbar-menu .navbar-item {
+  color: #ffffff;
+}
+
+.navbar-link {
+  color: #ffffff;
+}
+
+.navbar-link:hover {
+  color: black;
+}
