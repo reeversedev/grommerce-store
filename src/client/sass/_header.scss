@@ -13,10 +13,20 @@
   color: #ffffff;
 }
 
+.navbar-dropdown .navbar-item {
+  color: black;
+}
+
 .navbar-link {
   color: #ffffff;
 }
 
 .navbar-link:hover {
   color: black;
+}
+
+.navbar-item.has-dropdown.is-active .navbar-link,
+.navbar-item.has-dropdown:hover .navbar-link {
+  background-color: rgba(28, 34, 36, 0.8);
+  color: #fff;
 }
