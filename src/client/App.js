@@ -3,12 +3,16 @@ import Header from './components/Header';
 
 import './sass/app.scss';
 
+import Index from './pages/index';
+
 class App extends Component {
   render() {
     return (
       <div>
         <Header />
-        <div className="container">{/* <p>Grommerce Store</p> */}</div>
+        <div className="container">
+          <Index />
+        </div>
       </div>
     );
   }
