@@ -10,20 +10,28 @@
 .slick-next,
 .slick-prev {
   background-color: #ccc;
-  color: #fff;
+  border: none;
+  bottom: 0;
+  color: #6e6e6e;
   cursor: pointer;
-  font-size: 25px;
+  font-size: 20px;
   height: 100%;
-  opacity: 0.7;
-  transition: background-color 0.1s ease-out;
-  width: 26px;
+  margin: auto 0;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  z-index: 1;
 }
 
 .card-image {
   height: 140px;
   overflow: hidden;
-  img {
-    margin: 0 auto;
+  .image-wrapper {
+    height: 100px;
+    img {
+      margin: 0 auto;
+    }
   }
 }
 
