@@ -1,30 +1,33 @@
 import React, { Component } from 'react';
-
-class Card extends Component {
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  Button
+} from 'reactstrap';
+class ProductCard extends Component {
   render() {
     return (
-      <div className="card">
-        <div className="card-image">
-          <div className="image-wrapper">
-            <img
-              src="//cdn.grofers.com/app/images/products/normal/pro_333324.jpg?ts=1539070972"
-              alt="Placeholder image"
-            />
-          </div>
-        </div>
-        <div className="card-content">
-          <div className="media">
-            <div className="media-content">
-              <p className="title is-4">
-                Aashirvaad Shudh Chakki Whole Wheat Atta
-              </p>
-              <p className="subtitle is-6">@johnsmith</p>
-            </div>
-          </div>
-        </div>
+      <div>
+        <Card>
+          <CardImg
+            top
+            src="//cdn.grofers.com/app/images/products/normal/pro_333324.jpg?ts=1539070972"
+            alt="Card image cap"
+          />
+          <CardBody>
+            <CardTitle>Aashirvaad Shudh Chakki Whole Wheat Atta</CardTitle>
+            <CardSubtitle>10 kg</CardSubtitle>
+            <CardText>₹ 380</CardText>
+            <Button>Button</Button>
+          </CardBody>
+        </Card>
       </div>
     );
   }
 }
 
-export default Card;
+export default ProductCard;
