@@ -1,3 +1,9 @@
 @import './header';
 @import './button';
 @import './carousel';
+@import './card';
+
+html,
+body {
+  font-family: Celias, Helvetica !important;
+}

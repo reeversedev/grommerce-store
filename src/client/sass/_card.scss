@@ -1,0 +1,27 @@
+.product-wrapper {
+  width: 245px;
+  display: inline-table;
+}
+.p-img {
+  height: 140px;
+  overflow: hidden;
+  padding-top: 15px;
+}
+.img-wrapper {
+  height: 100%;
+}
+.img-wrapper img {
+  position: absolute;
+  max-height: 100%;
+  height: 150px;
+  width: 150px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+button.add-to-cart {
+  border-radius: 25px;
+  color: #e96125;
+  background-color: #fff;
+  border: 1px solid #e96125;
+}

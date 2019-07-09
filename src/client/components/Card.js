@@ -11,18 +11,25 @@ import {
 class ProductCard extends Component {
   render() {
     return (
-      <div>
+      <div className="product-wrapper">
         <Card>
-          <CardImg
-            top
-            src="//cdn.grofers.com/app/images/products/normal/pro_333324.jpg?ts=1539070972"
-            alt="Card image cap"
-          />
+          <div className="p-img">
+            <div className="img-wrapper">
+              <CardImg
+                top
+                src="//cdn.grofers.com/app/images/products/normal/pro_333324.jpg?ts=1539070972"
+                alt="Card image cap"
+              />
+            </div>
+          </div>
+
           <CardBody>
             <CardTitle>Aashirvaad Shudh Chakki Whole Wheat Atta</CardTitle>
-            <CardSubtitle>10 kg</CardSubtitle>
-            <CardText>₹ 380</CardText>
-            <Button>Button</Button>
+            <CardSubtitle className="mb-2 text-muted">10 kg</CardSubtitle>
+            <div className="d-flex align-items-center justify-content-between">
+              <CardText className="font-weight-bold">₹ 380</CardText>
+              <Button className="add-to-cart">Add to Cart</Button>
+            </div>
           </CardBody>
         </Card>
       </div>
