@@ -9,10 +9,10 @@
 
 .slick-next,
 .slick-prev {
-  background-color: transparent;
+  background-color: #6e6e6e;
   border: none;
   bottom: 0;
-  color: #6e6e6e;
+  // color: #ffff;
   cursor: pointer;
   font-size: 20px;
   height: 100%;
@@ -20,7 +20,7 @@
   outline: none;
   padding: 0;
   position: absolute;
-  top: 0;
+  top: 100%;
   z-index: 1;
 }
 
