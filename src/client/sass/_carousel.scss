@@ -9,7 +9,7 @@
 
 .slick-next,
 .slick-prev {
-  background-color: #6e6e6e;
+  background-color: #ccc;
   border: none;
   bottom: 0;
   // color: #ffff;
@@ -26,7 +26,7 @@
 
 .slick-next,
 .slick-prev:hover {
-  background-color: #ccc !important;
+  background-color: #6e6e6e !important;
 }
 
 .slider__arrow--bars {
@@ -43,7 +43,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   color: #333;
   margin-bottom: 0.5rem;
 }
