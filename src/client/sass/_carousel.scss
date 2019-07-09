@@ -24,6 +24,11 @@
   z-index: 1;
 }
 
+.slick-next,
+.slick-prev:hover {
+  background-color: #ccc !important;
+}
+
 .slider__arrow--bars {
   background-color: #ccc;
   color: #fff;
@@ -33,6 +38,14 @@
   opacity: 0.7;
   transition: background-color 0.1s ease-out;
   width: 26px;
+}
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
 }
 
 .card-image {
