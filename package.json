@@ -6,7 +6,9 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "express": "^4.16.4",
+    "graphql-yoga": "^1.18.3",
     "next": "^8.0.3",
+    "pg": "^7.17.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^6.0.1",
@@ -16,6 +18,7 @@
     "redux-logger": "^3.0.6",
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.3.0",
+    "reflect-metadata": "^0.1.13",
     "winston": "^3.2.1"
   },
   "devDependencies": {
@@ -24,16 +27,22 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
     "@babel/plugin-transform-regenerator": "^7.4.0",
     "@babel/plugin-transform-runtime": "^7.4.0",
+    "@types/node": "^13.1.6",
     "babel-core": "^6.26.3",
     "babel-plugin-import": "^1.11.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "nodemon": "^2.0.2",
     "parcel-bundler": "^1.12.3",
-    "sass": "^1.18.0"
+    "sass": "^1.18.0",
+    "ts-node": "^8.6.2",
+    "typeorm": "^0.2.22",
+    "typescript": "^3.7.4"
   },
   "scripts": {
     "start": "parcel index.html",
+    "start-server": "nodemon --exec ts-node src/server/server.ts",
     "build": "parcel build index.html --no-cache"
   },
   "repository": {
