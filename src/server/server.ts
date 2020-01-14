@@ -9,16 +9,16 @@ const typeDefs = `
         age: Int! 
         email: String! 
     }
-  type Query {
-    hello(name: String): String!
-    user(id: Int!): User!
-    users: [User!]!
-  }
-  type Mutation {
-      createUser(firstName: String!, lastName: String!, age: Int!, email: String!): User!
-      updateUser(id: Int!, firstName: String, lastName: String, age: Int, email: String): Boolean
-      deleteUser(id: Int!): Boolean
-  }
+    type Query {
+        hello(name: String): String!
+        user(id: Int!): User!
+        users: [User!]!
+    }
+    type Mutation {
+        createUser(firstName: String!, lastName: String!, age: Int!, email: String!): User!
+        updateUser(id: Int!, firstName: String, lastName: String, age: Int, email: String): Boolean
+        deleteUser(id: Int!): Boolean
+    }
 `;
 
 const resolvers = {
