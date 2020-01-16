@@ -18,7 +18,7 @@ const BestSellingItems = () => {
       <div className="slider-header">
         <p>Best Selling Items</p>{' '}
         <a href="" className="btn--link show-all-link">
-          View All <i class="icofont-simple-right" />
+          View All <i className="icofont-simple-right" />
         </a>
       </div>
       <div className="store-card-categories">

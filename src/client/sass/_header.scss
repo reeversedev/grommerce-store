@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgba(28, 34, 36, 0.8);
+  background-color: rgb(28, 34, 36) !important;
   font-size: 14px;
 }
 
@@ -29,4 +29,15 @@
 .navbar-item.has-dropdown:hover .navbar-link {
   background-color: rgba(28, 34, 36, 0.8);
   color: #fff;
+}
+
+.header .shopping-cart {
+  background-image: url(//webcdn.grofers.com/images/header/cart_2x-1657d3d.png);
+  background-size: 24px;
+  cursor: pointer;
+  padding-left: 38px;
+  position: relative;
+  width: 92px;
+  background-position: 22px center;
+  background-repeat: no-repeat;
 }
