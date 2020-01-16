@@ -31,6 +31,7 @@ class Header extends Component {
     return (
       <div className="header">
         <Navbar
+          id="navbar"
           color="light"
           light
           expand="md"
@@ -48,7 +49,7 @@ class Header extends Component {
               className="shopping-cart shopping-cart--empty"
               onClick={() => this.props.controlCart()}
             >
-              <span>My Cart</span>
+              <p className="mb-0">My Cart</p>
             </div>
           </div>
         </Navbar>

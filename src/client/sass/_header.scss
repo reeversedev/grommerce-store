@@ -3,6 +3,11 @@
   font-size: 14px;
 }
 
+#navbar {
+  background-color: rgb(28, 34, 36) !important;
+  color: #ffffff;
+}
+
 .navbar .navbar-brand {
   display: block;
   padding: 10px 28px;
@@ -40,4 +45,11 @@
   width: 92px;
   background-position: 22px center;
   background-repeat: no-repeat;
+
+  display: block;
+  height: 100%;
+  line-height: 60px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
 }
