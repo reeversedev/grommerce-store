@@ -4,7 +4,9 @@ import { Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
 const ShoppingCart = ({ isOpen, controlCart }) => {
   return (
     <Modal isOpen={isOpen} className="modal-right">
-      <ModalHeader className="cart-header">Shopping Cart</ModalHeader>
+      <ModalHeader className="cart-header" toggle={controlCart}>
+        Shopping Cart
+      </ModalHeader>
       <ModalBody>Cart Body</ModalBody>
       <ModalFooter>
         <button
