@@ -6,19 +6,17 @@ import './sass/app.scss';
 import Index from './pages/index';
 import ShoppingCart from './components/ShoppingCart';
 
+export const CartContext = React.createContext({ cartStatus: false });
+
 const App = () => {
-  const [isOpen, setIsOpen] = useState();
-  const controlCart = () => {
-    setIsOpen(!isOpen);
-  };
   return (
-    <div>
-      <Header controlCart={controlCart} />
+    <CartContext.Provider>
+      <Header />
       <div className="container">
         <Index />
-        <ShoppingCart isOpen={isOpen} controlCart={controlCart} />
+        <ShoppingCart />
       </div>
-    </div>
+    </CartContext.Provider>
   );
 };
 

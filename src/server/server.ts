@@ -1,29 +1,22 @@
+import 'reflect-metadata';
 import { GraphQLServer } from 'graphql-yoga';
 import { createConnection } from 'typeorm';
+import { ResolverMap } from './types/ResolverType';
 
-const typeDefs = `
-    type User {  
-        id: Int!
-        firstName: String! 
-        lastName: String! 
-        age: Int! 
-        email: String! 
-    }
-    type Query {
-        hello(name: String): String!
-        user(id: Int!): User!
-        users: [User!]!
-    }
-    type Mutation {
-        createUser(firstName: String!, lastName: String!, age: Int!, email: String!): User!
-        updateUser(id: Int!, firstName: String, lastName: String, age: Int, email: String): Boolean
-        deleteUser(id: Int!): Boolean
-    }
-`;
+import { createUser, updateUser, deleteUser } from './resolvers/User';
+import { getUser, getAllUsers } from './queries/User';
 
-const resolvers = {
+import { typeDefs } from './types/typedefs';
+
+const resolvers: ResolverMap = {
   Query: {
-    hello: (_: any, { name }: any) => `hello ${name || 'World'}`
+    getUser,
+    getAllUsers
+  },
+  Mutation: {
+    createUser,
+    updateUser,
+    deleteUser
   }
 };
 
