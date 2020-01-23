@@ -13,4 +13,6 @@ export class User extends BaseEntity {
   @Column({ type: 'varchar', length: '230' }) lastName: string;
 
   @Column() age: number;
+
+  @Column({ type: 'varchar', length: undefined }) password: string;
 }

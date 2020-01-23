@@ -1,24 +1,45 @@
 import { User } from '../entity/User';
+import { hash } from 'bcryptjs';
+import { initializePassport } from '../utils/passport-config';
+const passport = require('passport');
+
+initializePassport(
+  passport,
+  (email: string) => User.findOne(email),
+  (id: string) => User.findOne(id)
+);
+
+export const signup = async (_: any, args: any) => {
+  try {
+    const hashedPassword = await hash(args.password, 10);
+
+    const user = { ...args, password: hashedPassword };
+
+    await createUser('_', user);
+
+    return 'User Created';
+  } catch (error) {
+    return error.detail;
+  }
+};
 
 export const createUser = async (_: any, args: any) => {
   return await User.create(args).save();
 };
 
-export const updateUser = (_: any, { id, ...args }: any) => {
+export const updateUser = async (_: any, { id, ...args }: any) => {
   try {
-    User.update({ id }, args);
+    await User.update({ id }, args);
   } catch (err) {
-    console.log(err);
     return false;
   }
   return true;
 };
 
-export const deleteUser = (_: any, { id }: any) => {
+export const deleteUser = async (_: any, { id }: any) => {
   try {
-    User.delete({ id });
+    await User.delete({ id });
   } catch (err) {
-    console.log(err);
     return false;
   }
   return true;
