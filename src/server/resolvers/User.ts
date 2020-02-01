@@ -1,13 +1,33 @@
 import { User } from '../entity/User';
-import { hash } from 'bcryptjs';
-import { initializePassport } from '../utils/passport-config';
-const passport = require('passport');
+import * as bcrypt from 'bcryptjs';
+import { sign } from 'jsonwebtoken';
 
-initializePassport(
-  passport,
-  (email: string) => User.findOne(email),
-  (id: string) => User.findOne(id)
-);
+export const login = async (_, { email, password }, { req }) => {
+  const user = await User.findOne({ where: { email } });
+  if (!user) {
+    return null;
+  }
+  const valid = await bcrypt.compare(password, user.password);
+  if (!valid) {
+    return null;
+  }
+
+  const refreshToken = sign(
+    { userId: user.id, name: user.firstName + ' ' + user.lastName },
+    'damnsecret',
+    {
+      expiresIn: '7d'
+    }
+  );
+
+  const accessToken = sign(
+    {
+      userId: user.id
+    },
+    'damnsecret',
+    { expiresIn: '15min' }
+  );
+};
 
 export const signup = async (_: any, args: any) => {
   try {

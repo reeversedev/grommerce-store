@@ -34,15 +34,6 @@ const startServer = async () => {
 
   await createConnection();
 
-  server.express.use(
-    session({
-      name: 'qid',
-      secret: `some-random-secret-here`,
-      resave: false,
-      saveUninitialized: false
-    })
-  );
-
   server.start(opts, () => console.log('Server is running on localhost:4000'));
 };
 

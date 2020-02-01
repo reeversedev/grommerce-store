@@ -11,7 +11,8 @@ export function initializePassport(
     password: string,
     done: any
   ) => {
-    const user = getUserByEmail(email);
+    const user = await getUserByEmail(email);
+    console.log('user', user);
     if (user === null) {
       return done(null, false, { message: 'Please check the email' });
     }
