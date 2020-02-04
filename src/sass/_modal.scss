@@ -1,0 +1,16 @@
+.modal-right {
+  padding-right: 0 !important;
+
+  .modal-dialog {
+    margin: 0 auto;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+    max-width: 380px;
+  }
+
+  .modal-content {
+    min-height: 100%;
+  }
+}
