@@ -1,0 +1,10 @@
+{
+  "presets": ["@babel/env", "@babel/preset-typescript", "@babel/react"],
+  "plugins": [
+    "@babel/plugin-transform-react-jsx",
+    "@babel/proposal-object-rest-spread",
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    ["react-hot-loader/babel"]
+  ]
+}
