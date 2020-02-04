@@ -1,4 +1,4 @@
-import { OPEN_CART } from './types';
+import { OPEN_CART, CLOSE_CART } from './types';
 
 export const openCart = () => ({
   type: OPEN_CART,

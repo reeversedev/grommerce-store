@@ -5,7 +5,7 @@ const initialState = {
   cartStatus: false
 };
 
-const cartReducer = (state = initialState, action) => {
+const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case OPEN_CART:
       return {
@@ -24,4 +24,4 @@ const cartReducer = (state = initialState, action) => {
 
 // const rootReducer = combineReducers({ cartReducer: cartReducer });
 
-export default createStore(cartReducer);
+export default rootReducer;

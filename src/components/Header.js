@@ -1,11 +1,9 @@
 import React, { Component, useState, useContext } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
-import { CartContext } from '../App';
 
 const Header = props => {
+  console.log('props', props);
   const [isOpen, setIsOpen] = useState(false);
-  const openCart = React.useContext(CartContext);
-  console.log('open', openCart);
   return (
     <div className="header">
       <Navbar
