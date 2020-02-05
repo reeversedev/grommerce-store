@@ -27,7 +27,9 @@ const ProductCard = () => {
         </div>
 
         <CardBody>
-          <CardTitle>Aashirvaad Shudh Chakki Whole Wheat Atta</CardTitle>
+          <div className="item-title">
+            Aashirvaad Shudh Chakki Whole Wheat Atta
+          </div>
           <CardSubtitle className="mb-2 text-muted">10 kg</CardSubtitle>
           <div className="d-flex align-items-center justify-content-between">
             <CardText className="font-weight-bold">₹ 380</CardText>

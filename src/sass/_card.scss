@@ -1,7 +1,3 @@
-.product-wrapper {
-  width: 245px;
-  display: inline-table;
-}
 .p-img {
   height: 140px;
   overflow: hidden;
@@ -24,4 +20,12 @@ button.add-to-cart {
   color: #e96125;
   background-color: #fff;
   border: 1px solid #e96125;
+}
+
+.item-title {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
