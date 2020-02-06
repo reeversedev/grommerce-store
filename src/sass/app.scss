@@ -1,9 +1,13 @@
+// mixins
+@import './mixins';
 @import './header';
 @import './button';
 @import './carousel';
 @import './card';
 @import './cart';
 @import './container';
+@import './modal';
+
 html,
 body {
   height: 100%;

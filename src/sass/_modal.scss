@@ -1,3 +1,7 @@
+@import './variables/navbar';
+// mixins
+@import './mixins';
+
 .modal-right {
   padding-right: 0 !important;
 
@@ -12,5 +16,33 @@
 
   .modal-content {
     min-height: 100%;
+  }
+
+  .modal-header {
+    height: $navbar-height;
+
+    @include respond-below(xl) {
+      height: $navbar-height-lg;
+    }
+
+    @include respond-below(lg) {
+      height: $navbar-height-md;
+    }
+
+    @include respond-below(sm) {
+      height: $navbar-height-xs;
+    }
+  }
+
+  .modal-footer {
+    justify-content: center;
+  }
+
+  .modal.fade .modal-dialog {
+    transform: translate(25%, 0) !important;
+  }
+
+  .modal.show .modal-dialog {
+    transform: translate(0, 0) !important;
   }
 }

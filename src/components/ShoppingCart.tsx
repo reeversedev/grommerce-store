@@ -1,13 +1,14 @@
-import React from 'react';
+import * as React from 'react';
 import { Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { closeCart } from '../redux/actions';
+import { CartState } from '../redux/types';
 
-const ShoppingCart = () => {
-  const cartStatus = useSelector(state => state.cartStatus);
+const ShoppingCart: React.FC = () => {
+  const cartStatus = useSelector((state: CartState) => state.cartStatus);
   const dispatch = useDispatch();
   return (
-    <Modal isOpen={cartStatus} className="modal-right">
+    <Modal isOpen={cartStatus} wrapClassName="modal-right">
       <ModalHeader className="cart-header" toggle={() => dispatch(closeCart())}>
         Shopping Cart
       </ModalHeader>
