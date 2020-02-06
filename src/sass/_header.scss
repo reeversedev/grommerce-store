@@ -37,19 +37,12 @@
 }
 
 .header .shopping-cart {
-  background-image: url(//webcdn.grofers.com/images/header/cart_2x-1657d3d.png);
-  background-size: 24px;
-  cursor: pointer;
-  padding-left: 38px;
-  position: relative;
-  width: 92px;
-  background-position: 22px center;
-  background-repeat: no-repeat;
-
-  display: block;
+  display: flex;
+  align-items: center;
   height: 100%;
   line-height: 60px;
   position: relative;
   text-align: center;
   overflow: hidden;
+  cursor: pointer;
 }

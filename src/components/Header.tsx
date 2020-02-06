@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import { useDispatch } from 'react-redux';
 import { openCart, closeCart } from '../redux/actions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 export const Header: React.FC = () => {
   const dispatch = useDispatch();
@@ -22,11 +24,9 @@ export const Header: React.FC = () => {
           />
         </NavbarBrand>
         <div className="header-item">
-          <div
-            className="shopping-cart shopping-cart--empty"
-            onClick={() => dispatch(openCart())}
-          >
-            <p className="mb-0">My Cart</p>
+          <div className="shopping-cart" onClick={() => dispatch(openCart())}>
+            <FontAwesomeIcon icon={faShoppingCart} />{' '}
+            <p className="mb-0 ml-2">My Cart</p>
           </div>
         </div>
       </Navbar>
