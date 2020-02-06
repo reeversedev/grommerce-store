@@ -1,9 +1,10 @@
-import React, { Component, useState, useContext } from 'react';
+import * as React from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
+import { useDispatch } from 'react-redux';
+import { openCart, closeCart } from '../redux/actions';
 
-const Header = props => {
-  console.log('props', props);
-  const [isOpen, setIsOpen] = useState(false);
+export const Header: React.FC = () => {
+  const dispatch = useDispatch();
   return (
     <div className="header">
       <Navbar
@@ -23,7 +24,7 @@ const Header = props => {
         <div className="header-item">
           <div
             className="shopping-cart shopping-cart--empty"
-            // onClick={() => this.props.controlCart()}
+            onClick={() => dispatch(openCart())}
           >
             <p className="mb-0">My Cart</p>
           </div>
@@ -32,5 +33,3 @@ const Header = props => {
     </div>
   );
 };
-
-export default Header;

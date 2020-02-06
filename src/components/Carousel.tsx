@@ -1,7 +1,11 @@
 import * as React from 'react';
 import Slider from 'react-slick';
 
-const Carousel = ({ children }) => {
+interface CarouselProps {
+  children: React.ReactNode;
+}
+
+const Carousel: React.FC<CarouselProps> = props => {
   let settings = {
     dots: false,
     infinite: true,
@@ -11,7 +15,7 @@ const Carousel = ({ children }) => {
     arrows: true,
     touchMove: true
   };
-  return <Slider {...settings}>{children}</Slider>;
+  return <Slider {...settings}>{props.children}</Slider>;
 };
 
 export default Carousel;
