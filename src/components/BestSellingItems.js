@@ -1,6 +1,6 @@
 import React from 'react';
-import Slider from 'react-slick';
 import Card from '../components/Card';
+import Carousel from './Carousel';
 
 let settings = {
   dots: false,
@@ -22,7 +22,7 @@ const BestSellingItems = () => {
         </a>
       </div>
       <div className="store-card-categories">
-        <Slider {...settings}>
+        <Carousel {...settings}>
           <div className="column">
             <Card />
           </div>
@@ -38,7 +38,7 @@ const BestSellingItems = () => {
           <div className="column">
             <Card />
           </div>
-        </Slider>
+        </Carousel>
       </div>
     </div>
   );
