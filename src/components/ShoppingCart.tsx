@@ -10,9 +10,20 @@ const ShoppingCart: React.FC = () => {
   return (
     <Modal isOpen={cartStatus} wrapClassName="modal-right">
       <ModalHeader className="cart-header" toggle={() => dispatch(closeCart())}>
-        Shopping Cart
+        My Cart
       </ModalHeader>
-      <ModalBody>Cart Body</ModalBody>
+      <ModalBody className="d-flex flex-column justify-content-center align-self-center">
+        <div className="d-flex flex-column justify-content-center align-items-center">
+          <img
+            src="https://www.scholarswing.in/resources/images/empty-cart.png"
+            className="img-fluid"
+          />
+          <p>No Items in your cart</p>
+          <p className="text-muted">
+            Your favourite items are just a click away
+          </p>
+        </div>
+      </ModalBody>
       <ModalFooter>
         <button
           className="btn cart-checkout-button col-12"

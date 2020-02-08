@@ -19,7 +19,7 @@
   }
 
   .modal-header {
-    height: $navbar-height;
+    height: 65px;
 
     @include respond-below(xl) {
       height: $navbar-height-lg;
@@ -44,5 +44,13 @@
 
   .modal.show .modal-dialog {
     transform: translate(0, 0) !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  .modal-right {
+    .modal-header {
+      height: 65px;
+    }
   }
 }

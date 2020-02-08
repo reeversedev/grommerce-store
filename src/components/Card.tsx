@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import {
   Card,
   CardImg,
@@ -32,7 +32,7 @@ const ProductCard = () => {
           </div>
           <CardSubtitle className="mb-2 text-muted">10 kg</CardSubtitle>
           <div className="d-flex align-items-center justify-content-between">
-            <CardText className="font-weight-bold">₹ 380</CardText>
+            <CardText className="font-weight-bold mb-0">₹ 380</CardText>
             <Button
               className="add-to-cart"
               onClick={() => dispatch(openCart())}
