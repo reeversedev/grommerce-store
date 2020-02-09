@@ -9,7 +9,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   context: __dirname + '/src',
-  entry: path.join(__dirname, './src/index.js'),
+  entry: path.join(__dirname, './src/index.tsx'),
   devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
