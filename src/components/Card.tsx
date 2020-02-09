@@ -10,32 +10,32 @@ import {
 } from 'reactstrap';
 import { openCart } from '../redux/actions';
 import { useDispatch } from 'react-redux';
+import { product } from '../../utils/products';
 
 const ProductCard = () => {
   const dispatch = useDispatch();
   return (
     <div className="product-wrapper">
-      <Card>
+      <Card key={product.id}>
         <div className="p-img">
           <div className="img-wrapper">
-            <CardImg
-              top
-              src="//cdn.grofers.com/app/images/products/normal/pro_333324.jpg?ts=1539070972"
-              alt="Card image cap"
-            />
+            <CardImg top src={product.img} alt="Card image cap" />
           </div>
         </div>
-
         <CardBody>
-          <div className="item-title">
-            Aashirvaad Shudh Chakki Whole Wheat Atta
-          </div>
-          <CardSubtitle className="mb-2 text-muted">10 kg</CardSubtitle>
+          <div className="item-title">{product.name}</div>
+          <CardSubtitle className="mb-2 text-muted">
+            {product.volume}
+          </CardSubtitle>
           <div className="d-flex align-items-center justify-content-between">
-            <CardText className="font-weight-bold mb-0">₹ 380</CardText>
+            <CardText className="font-weight-bold mb-0">
+              {product.price}
+            </CardText>
             <Button
               className="add-to-cart"
-              onClick={() => dispatch(openCart())}
+              onClick={() => {
+                dispatch(openCart());
+              }}
             >
               Add to Cart
             </Button>

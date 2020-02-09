@@ -1,6 +1,7 @@
-import React from 'react';
-import Card from '../components/Card';
+import * as React from 'react';
+import Card from './Card';
 import Carousel from './Carousel';
+import { Link } from 'react-router-dom';
 
 let settings = {
   dots: false,
@@ -17,9 +18,9 @@ const BestSellingItems = () => {
     <div className="store-card-container">
       <div className="slider-header">
         <p>Best Selling Items</p>{' '}
-        <a href="" className="btn--link show-all-link">
+        <Link to="/products" className="btn--link show-all-link">
           View All <i className="icofont-simple-right" />
-        </a>
+        </Link>
       </div>
       <div className="store-card-categories">
         <Carousel {...settings}>
