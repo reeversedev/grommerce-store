@@ -1,7 +1,9 @@
 import * as React from 'react';
-import Card from './Card';
+import ProductCard from './ProductCard';
 import Carousel from './Carousel';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 let settings = {
   dots: false,
@@ -19,25 +21,25 @@ const BestSellingItems = () => {
       <div className="slider-header">
         <p>Best Selling Items</p>{' '}
         <Link to="/products" className="btn--link show-all-link">
-          View All <i className="icofont-simple-right" />
+          View All <FontAwesomeIcon icon={faArrowRight} />
         </Link>
       </div>
       <div className="store-card-categories">
         <Carousel {...settings}>
           <div className="column">
-            <Card />
+            <ProductCard />
           </div>
           <div className="column">
-            <Card />
+            <ProductCard />
           </div>
           <div className="column">
-            <Card />
+            <ProductCard />
           </div>
           <div className="column">
-            <Card />
+            <ProductCard />
           </div>
           <div className="column">
-            <Card />
+            <ProductCard />
           </div>
         </Carousel>
       </div>

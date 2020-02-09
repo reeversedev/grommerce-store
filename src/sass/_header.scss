@@ -50,3 +50,17 @@
   overflow: hidden;
   cursor: pointer;
 }
+
+.breadcrumb {
+  background-color: inherit;
+  font-size: 12px;
+}
+
+.breadcrumb-item a {
+  color: black;
+  font-weight: 100;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: '>';
+}
