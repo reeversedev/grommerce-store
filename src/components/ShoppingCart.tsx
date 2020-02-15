@@ -18,8 +18,6 @@ const EmptyCart: React.FC = () => {
 };
 
 const ShoppingCart: React.FC = () => {
-  const [cart, setCart] = React.useState([]);
-  console.log(cart);
   const cartStatus = useSelector((state: CartState) => state.cartStatus);
   const dispatch = useDispatch();
   return (

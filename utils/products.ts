@@ -4,5 +4,6 @@ export const product = {
   volume: '10 kg',
   price: '₹ 380',
   img:
-    '//cdn.grofers.com/app/images/products/normal/pro_333324.jpg?ts=1539070972'
+    '//cdn.grofers.com/app/images/products/normal/pro_333324.jpg?ts=1539070972',
+  quantity: 1
 };
