@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { closeCart } from '../redux/actions';
 import { CartState } from '../redux/types';
 import { Product, cart } from '../../utils/cart';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 type NonEmptyCartProps = {
   cart: Array<Product>;
@@ -49,13 +51,32 @@ const NonEmptyCart: React.FC<NonEmptyCartProps> = ({ cart }) => {
       <div className="d-flex flex-column justify-content-between bg-white">
         {cart.map(c => {
           return (
-            <div className="d-flex align-items-center" key={c.id}>
+            <div className="d-flex align-items-center p-2" key={c.id}>
               <div className="w-20">
                 <img src={c.img} alt={c.name} height="100" />
               </div>
               <div className="w-80">
                 <p className="mb-0 mt-2">{c.name}</p>
                 <p>{c.volume}</p>
+                <div className="d-flex">
+                  <div
+                    className="btn-group d-flex align-items-center"
+                    role="group"
+                    aria-label="Basic example"
+                  >
+                    <FontAwesomeIcon icon={faMinusCircle} />
+                    <p className="mx-3 mb-0">{c.quantity}</p>
+                    <FontAwesomeIcon icon={faPlusCircle} />
+                  </div>
+                  <div className="d-flex justify-content-around ml-2">
+                    <p className="text-muted mb-0 mx-2">X</p>
+                    <p className="mb-0 mx-2">₹{c.price}</p>
+                    <p className="mb-0 mx-2">
+                      <del>₹{c.mrp}</del>
+                    </p>
+                    <p className="float-right mb-0">₹{c.price * c.quantity}</p>
+                  </div>
+                </div>
               </div>
             </div>
           );
