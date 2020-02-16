@@ -2,16 +2,17 @@ export interface Product {
   id: string;
   name: string;
   volume: string;
-  price: string;
+  mrp: number;
+  price: number;
   img: string;
   quantity: number;
 }
 
-export const addToCart = (product: Product) => {
-  const cart = JSON.parse(
-    JSON.parse(JSON.stringify(localStorage.getItem('cart')))
-  );
+export const cart: Array<Product> = JSON.parse(
+  JSON.parse(JSON.stringify(localStorage.getItem('cart')))
+);
 
+export const addToCart = (product: Product) => {
   if (Array.isArray(cart)) {
     const existingProduct = cart.find((p: Product) => p.id === product.id);
     if (existingProduct) {
@@ -29,5 +30,23 @@ export const addToCart = (product: Product) => {
     const newCart = [];
     newCart.push(product);
     localStorage.setItem('cart', JSON.stringify(newCart));
+  }
+};
+
+export const removeFromCart = (product: Product) => {
+  if (Array.isArray(cart)) {
+    const existingProduct = cart.find((p: Product) => p.id === product.id);
+    if (existingProduct) {
+      // If Product already exists inside the cart
+      const existingProductIndex = cart.indexOf(existingProduct);
+      if (cart[existingProductIndex].quantity === 1) {
+        // If quantity is 1, product will be removed from the cart
+        cart.splice(existingProductIndex, 1);
+      } else {
+        // Only quanitty will be reduced by 1
+        cart[existingProductIndex].quantity--;
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
   }
 };

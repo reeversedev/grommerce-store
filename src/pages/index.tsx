@@ -2,14 +2,18 @@ import * as React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Homepage from './Homepage';
 import AllProducts from './AllProducts';
+import { Header } from '../components/Header';
 
 const Index = () => {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={Homepage} />
-        <Route exact path="/products" component={AllProducts} />
-      </Switch>
+      <Header />
+      <div className="container">
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/products" component={AllProducts} />
+        </Switch>
+      </div>
     </Router>
   );
 };

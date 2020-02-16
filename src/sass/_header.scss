@@ -49,6 +49,27 @@
   text-align: center;
   overflow: hidden;
   cursor: pointer;
+  font-size: 16px;
+
+  .shopping-cart-icon {
+    margin-right: 10px;
+  }
+
+  .cart-quantity {
+    background-color: #e96125;
+    border-radius: 20px;
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    height: 16px;
+    left: 14px;
+    line-height: 0.5;
+    min-width: 10px;
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    top: 14px;
+  }
 }
 
 .breadcrumb {
