@@ -3,12 +3,13 @@ import { Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { closeCart } from '../redux/actions';
 import { CartState } from '../redux/types';
-import { Product, cart } from '../../utils/cart';
+import { Product, cart, removeFromCart, addToCart } from '../../utils/cart';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 type NonEmptyCartProps = {
   cart: Array<Product>;
+  changeState: CallableFunction;
 };
 
 const EmptyCart: React.FC = () => {
@@ -24,7 +25,7 @@ const EmptyCart: React.FC = () => {
   );
 };
 
-const NonEmptyCart: React.FC<NonEmptyCartProps> = ({ cart }) => {
+const NonEmptyCart: React.FC<NonEmptyCartProps> = ({ cart, changeState }) => {
   const grommercePrice = cart.reduce((acc, c) => acc + c.price * c.quantity, 0);
   const marketPrice = cart.reduce((acc, c) => acc + c.mrp * c.quantity, 0);
   const profit = marketPrice - grommercePrice;
@@ -64,9 +65,23 @@ const NonEmptyCart: React.FC<NonEmptyCartProps> = ({ cart }) => {
                     role="group"
                     aria-label="Basic example"
                   >
-                    <FontAwesomeIcon icon={faMinusCircle} />
+                    <FontAwesomeIcon
+                      icon={faMinusCircle}
+                      className="btn--link action-icon"
+                      onClick={() => {
+                        changeState();
+                        removeFromCart(c);
+                      }}
+                    />
                     <p className="mx-3 mb-0">{c.quantity}</p>
-                    <FontAwesomeIcon icon={faPlusCircle} />
+                    <FontAwesomeIcon
+                      icon={faPlusCircle}
+                      className="btn--link action-icon"
+                      onClick={() => {
+                        changeState();
+                        addToCart(c);
+                      }}
+                    />
                   </div>
                   <div className="d-flex justify-content-around ml-2">
                     <p className="text-muted mb-0 mx-2">X</p>
@@ -88,6 +103,7 @@ const NonEmptyCart: React.FC<NonEmptyCartProps> = ({ cart }) => {
 
 const ShoppingCart: React.FC = () => {
   const cartStatus = useSelector((state: CartState) => state.cartStatus);
+  const [dummyState, setDummyState] = React.useState(false);
   const dispatch = useDispatch();
   const [cartQuantity, setCartQuantity] = React.useState<Array<
     Product
@@ -98,7 +114,7 @@ const ShoppingCart: React.FC = () => {
     window.addEventListener('storage', () => {
       setCartQuantity(cart);
     });
-  }, []);
+  });
 
   React.useEffect(() => {
     return () => {
@@ -115,7 +131,10 @@ const ShoppingCart: React.FC = () => {
       </ModalHeader>
       <ModalBody>
         {cartQuantity && cartQuantity.length > 0 ? (
-          <NonEmptyCart cart={cart} />
+          <NonEmptyCart
+            cart={cart}
+            changeState={() => setDummyState(!dummyState)}
+          />
         ) : (
           <div className="d-flex flex-column justify-content-center align-self-center">
             <EmptyCart />

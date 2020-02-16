@@ -8,10 +8,10 @@ import {
   CardSubtitle,
   Button
 } from 'reactstrap';
-import { openCart } from '../redux/actions';
+import { openCart, updateCart } from '../redux/actions';
 import { useDispatch } from 'react-redux';
 import { product } from '../../utils/products';
-import { addToCart } from '../../utils/cart';
+import { addToCart, cart } from '../../utils/cart';
 
 const ProductCard = () => {
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ const ProductCard = () => {
             <Button
               className="add-to-cart"
               onClick={() => {
-                addToCart(product);
+                dispatch(updateCart(addToCart(product)));
                 dispatch(openCart());
               }}
             >

@@ -31,6 +31,7 @@ export const addToCart = (product: Product) => {
     newCart.push(product);
     localStorage.setItem('cart', JSON.stringify(newCart));
   }
+  return JSON.parse(JSON.parse(JSON.stringify(localStorage.getItem('cart'))));
 };
 
 export const removeFromCart = (product: Product) => {
@@ -49,4 +50,5 @@ export const removeFromCart = (product: Product) => {
       localStorage.setItem('cart', JSON.stringify(cart));
     }
   }
+  return JSON.parse(JSON.parse(JSON.stringify(localStorage.getItem('cart'))));
 };

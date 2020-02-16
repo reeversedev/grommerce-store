@@ -1,9 +1,11 @@
 import { createStore, combineReducers } from 'redux';
-import { OPEN_CART, CLOSE_CART, ActionType } from './types';
+import { OPEN_CART, CLOSE_CART, ActionType, UPDATE_CART } from './types';
 import { CartState } from './types';
+import { cart } from '../../utils/cart';
 
 const initialState: CartState = {
-  cartStatus: false
+  cartStatus: false,
+  cartQuantity: cart
 };
 
 const rootReducer = (state = initialState, action: ActionType) => {
@@ -17,6 +19,11 @@ const rootReducer = (state = initialState, action: ActionType) => {
       return {
         ...state,
         cartStatus: action.payload
+      };
+    case UPDATE_CART:
+      return {
+        ...state,
+        cartQuantity: action.payload
       };
     default:
       return state;

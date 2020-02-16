@@ -1,13 +1,34 @@
 import * as React from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { openCart, closeCart } from '../redux/actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { cart } from '../../utils/cart';
+import { Product } from '../../utils/cart';
 import { Link } from 'react-router-dom';
+import { CartState } from '../redux/types';
 
 export const Header: React.FC = () => {
+  const [cartQuantity, setCartQuantity] = React.useState<Array<
+    Product
+  > | null>();
+  React.useEffect(() => {
+    setCartQuantity(cart);
+    window.addEventListener('storage', () => {
+      setCartQuantity(cart);
+    });
+  });
+
+  React.useEffect(() => {
+    return () => {
+      window.removeEventListener('storage', () => {
+        setCartQuantity(cart);
+      });
+    };
+  }, []);
+
+  const cart = useSelector((state: CartState) => state.cartQuantity);
+
   const cartItems = cart.reduce((acc, c) => acc + c.quantity, 0);
   const cartTotal = cart.reduce((acc, c) => acc + c.quantity * c.price, 0);
 
