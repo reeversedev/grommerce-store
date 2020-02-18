@@ -8,9 +8,8 @@ export interface Product {
   quantity: number;
 }
 
-export const cart: Array<Product> = JSON.parse(
-  JSON.parse(JSON.stringify(localStorage.getItem('cart')))
-);
+export const cart: Array<Product> =
+  JSON.parse(JSON.parse(JSON.stringify(localStorage.getItem('cart')))) || [];
 
 export const addToCart = (product: Product) => {
   if (Array.isArray(cart)) {
