@@ -5,7 +5,11 @@ import { closeCart } from '../redux/actions';
 import { CartState } from '../redux/types';
 import { Product, cart, removeFromCart, addToCart } from '../../utils/cart';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import {
+  faMinusCircle,
+  faPlusCircle,
+  faArrowRight
+} from '@fortawesome/free-solid-svg-icons';
 
 type NonEmptyCartProps = {
   cart: Array<Product>;
@@ -146,7 +150,14 @@ const ShoppingCart: React.FC = () => {
           className="btn cart-checkout-button col-12"
           onClick={() => dispatch(closeCart())}
         >
-          Start Shopping
+          {cartQuantity && cartQuantity.length > 0 ? (
+            <span>
+              Proceed to Checkout{' '}
+              <FontAwesomeIcon icon={faArrowRight} className="action-icon" />
+            </span>
+          ) : (
+            <span>Start Shopping</span>
+          )}
         </button>
       </ModalFooter>
     </Modal>
