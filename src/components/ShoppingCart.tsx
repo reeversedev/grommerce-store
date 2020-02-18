@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { closeCart } from '../redux/actions';
+import { closeCart, updateCart } from '../redux/actions';
 import { CartState } from '../redux/types';
 import { Product, cart, removeFromCart, addToCart } from '../../utils/cart';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -30,6 +30,7 @@ const EmptyCart: React.FC = () => {
 };
 
 const NonEmptyCart: React.FC<NonEmptyCartProps> = ({ cart, changeState }) => {
+  const dispatch = useDispatch();
   const grommercePrice = cart.reduce((acc, c) => acc + c.price * c.quantity, 0);
   const marketPrice = cart.reduce((acc, c) => acc + c.mrp * c.quantity, 0);
   const profit = marketPrice - grommercePrice;
@@ -83,7 +84,7 @@ const NonEmptyCart: React.FC<NonEmptyCartProps> = ({ cart, changeState }) => {
                       className="btn--link action-icon"
                       onClick={() => {
                         changeState();
-                        addToCart(c);
+                        dispatch(updateCart(addToCart(c)));
                       }}
                     />
                   </div>

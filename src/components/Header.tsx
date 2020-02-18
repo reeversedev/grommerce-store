@@ -9,26 +9,7 @@ import { Link } from 'react-router-dom';
 import { CartState } from '../redux/types';
 
 export const Header: React.FC = () => {
-  const [cartQuantity, setCartQuantity] = React.useState<Array<
-    Product
-  > | null>();
-  React.useEffect(() => {
-    setCartQuantity(cart);
-    window.addEventListener('storage', () => {
-      setCartQuantity(cart);
-    });
-  });
-
-  React.useEffect(() => {
-    return () => {
-      window.removeEventListener('storage', () => {
-        setCartQuantity(cart);
-      });
-    };
-  }, []);
-
   const cart = useSelector((state: CartState) => state.cartQuantity);
-
   const cartItems = cart.reduce((acc, c) => acc + c.quantity, 0);
   const cartTotal = cart.reduce((acc, c) => acc + c.quantity * c.price, 0);
 
