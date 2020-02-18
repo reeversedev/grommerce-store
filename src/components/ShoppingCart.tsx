@@ -75,7 +75,7 @@ const NonEmptyCart: React.FC<NonEmptyCartProps> = ({ cart, changeState }) => {
                       className="btn--link action-icon"
                       onClick={() => {
                         changeState();
-                        removeFromCart(c);
+                        dispatch(updateCart(removeFromCart(c)));
                       }}
                     />
                     <p className="mx-3 mb-0">{c.quantity}</p>
