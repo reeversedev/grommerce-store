@@ -15,3 +15,6 @@ body {
   background-color: rgb(238, 238, 238) !important;
   font-family: 'Ubuntu', sans-serif !important;
 }
+* {
+  touch-action: manipulation;
+}
