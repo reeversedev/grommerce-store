@@ -4,7 +4,7 @@
 }
 
 .store-card-categories {
-  min-height: 132px;
+  min-height: 100px;
 }
 
 .store-card-container {
@@ -63,6 +63,16 @@
       margin: 0 auto;
     }
   }
+}
+
+.round-arrow {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  padding: 10px;
+  top: 50%;
+  margin: 10px;
+  background-color: #eeeeee !important;
 }
 
 @media screen and (min-width: 1260px) {
