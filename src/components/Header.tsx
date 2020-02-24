@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
             height="30"
           />
         </Link>
-        <HamburgerButton />
+        <HamburgerButton className="d-flex d-md-flex d-lg-none" />
         <input
           type="text"
           className="col-6 form-control"

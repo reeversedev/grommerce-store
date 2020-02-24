@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-const HamburgerButton = () => {
+const HamburgerButton = (props: any) => {
   return (
-    <div className="hamburger-menu">
+    <div className={`hamburger-menu ${props.className}`}>
       <div className="bar top"></div>
       <div className="bar middle"></div>
       <div className="bar bottom"></div>
