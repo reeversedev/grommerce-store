@@ -85,3 +85,64 @@
 .breadcrumb-item + .breadcrumb-item::before {
   content: '>';
 }
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 15px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.hamburger-menu .bar {
+  height: 2px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin: left;
+  transition: all 0.5s;
+}
+
+.hamburger-menu:hover .top {
+  transform: rotate(45deg);
+}
+.hamburger-menu:hover .middle {
+  opacity: 0;
+}
+.hamburger-menu:hover .bottom {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 320px) {
+  .header .shopping-cart {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    line-height: 60px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 20px;
+
+    .shopping-cart-icon {
+      margin-right: 10px;
+    }
+
+    .cart-quantity {
+      background-color: #e96125;
+      border-radius: 20px;
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      height: 16px;
+      left: 16px;
+      line-height: 0.5;
+      min-width: 10px;
+      padding: 5px;
+      position: absolute;
+      text-align: center;
+      top: 0px;
+    }
+  }
+}
