@@ -6,6 +6,8 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 });
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 
 module.exports = {
   context: __dirname + '/src',
@@ -28,7 +30,12 @@ module.exports = {
       filename: devMode ? '[name].css' : '[name].[hash].css',
       chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
     }),
-    htmlWebpackPlugin
+    htmlWebpackPlugin,
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disabled',
+      generateStatsFile: true,
+      statsOptions: { source: false }
+    })
   ],
   module: {
     rules: [

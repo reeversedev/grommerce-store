@@ -63,7 +63,7 @@ export const Header: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="d-flex justify-content-between align-items-center-flex-grow-1 d-lg-none">
+        <div className="d-flex justify-content-between align-items-center-flex-grow-1 d-lg-none mt-2">
           <input
             type="text"
             className="col-12 form-control"
