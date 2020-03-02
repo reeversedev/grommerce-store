@@ -1,6 +1,7 @@
 .navbar {
   background-color: rgb(28, 34, 36) !important;
   font-size: 14px;
+  align-items: inherit;
 }
 
 #navbar {
@@ -41,6 +42,7 @@
 }
 
 .header .shopping-cart {
+  color: white;
   display: flex;
   align-items: center;
   height: 100%;
