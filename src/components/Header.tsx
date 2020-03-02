@@ -17,8 +17,8 @@ export const Header: React.FC = () => {
   const dispatch = useDispatch();
   return (
     <div className="header">
-      <div className="navbar d-flex flex-column align-items-">
-        <div className="d-flex justify-content-between align-items-center">
+      <div className="navbar navbar-menu d-flex flex-column align-items-">
+        <div className="d-flex navbar-item justify-content-between align-items-center">
           <Link className="navbar-brand d-lg-block d-none" to="/">
             <img
               src="https://res.cloudinary.com/reeversedev/image/upload/v1562266145/Grommerce_dtdki6.jpg"
