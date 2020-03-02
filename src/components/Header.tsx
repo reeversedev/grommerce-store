@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
         color="light"
         light
         expand="md"
-        className="navbar d-flex justify-content-around align-items-center flex-row"
+        className="navbar d-flex justify-content-between align-items-center flex-row"
       >
         <Link className="navbar-brand d-lg-block d-none" to="/">
           <img

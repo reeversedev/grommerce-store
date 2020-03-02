@@ -89,6 +89,7 @@
 .hamburger-menu {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-between;
   height: 15px;
   width: 20px;
@@ -114,6 +115,74 @@
 }
 
 @media screen and (max-width: 320px) {
+  .header .shopping-cart {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    line-height: 60px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 20px;
+
+    .shopping-cart-icon {
+      margin-right: 10px;
+    }
+
+    .cart-quantity {
+      background-color: #e96125;
+      border-radius: 20px;
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      height: 16px;
+      left: 16px;
+      line-height: 0.5;
+      min-width: 10px;
+      padding: 5px;
+      position: absolute;
+      text-align: center;
+      top: 0px;
+    }
+  }
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+  .header .shopping-cart {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    line-height: 60px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 20px;
+
+    .shopping-cart-icon {
+      margin-right: 10px;
+    }
+
+    .cart-quantity {
+      background-color: #e96125;
+      border-radius: 20px;
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      height: 16px;
+      left: 16px;
+      line-height: 0.5;
+      min-width: 10px;
+      padding: 5px;
+      position: absolute;
+      text-align: center;
+      top: 0px;
+    }
+  }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
   .header .shopping-cart {
     display: flex;
     align-items: center;
