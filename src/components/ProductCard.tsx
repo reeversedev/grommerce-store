@@ -29,7 +29,7 @@ const ProductCard = () => {
             {product.volume}
           </CardSubtitle>
           <div className="d-flex flex-lg-row flex-column align-items-lg-center justify-content-between">
-            <CardText className="font-weight-bold mb-0">
+            <CardText className="font-weight-bold mb-lg-0">
               &#8377; {product.price}
             </CardText>
             <Button
