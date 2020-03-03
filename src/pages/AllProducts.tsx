@@ -6,10 +6,10 @@ const AllProducts = () => {
   return (
     <div className="mt-4">
       <div className="d-flex">
-        <div className="w-25">
+        <div className="w-25 d-none d-lg-block">
           <CategoryList />
         </div>
-        <div className="w-75">
+        <div className="w-lg-75">
           <Showcase />
         </div>
       </div>
