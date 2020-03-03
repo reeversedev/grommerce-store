@@ -4,6 +4,7 @@ import Carousel from './Carousel';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { routes } from '../routes';
 
 let settings = {
   dots: false,
@@ -46,7 +47,7 @@ const BestSellingItems = () => {
     <div className="store-card-container">
       <div className="slider-header">
         <p>Best Selling Items</p>{' '}
-        <Link to="/products" className="btn--link show-all-link">
+        <Link to={routes.bestSellingItems} className="btn--link show-all-link">
           View All <FontAwesomeIcon icon={faArrowRight} />
         </Link>
       </div>

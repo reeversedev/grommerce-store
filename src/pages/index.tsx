@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Homepage from './Homepage';
 import AllProducts from './AllProducts';
 import { Header } from '../components/Header';
+import { routes } from '../routes';
 
 const Index = () => {
   return (
@@ -11,7 +12,7 @@ const Index = () => {
       <div className="container">
         <Switch>
           <Route exact path="/" component={Homepage} />
-          <Route exact path="/products" component={AllProducts} />
+          <Route exact path={routes.bestSellingItems} component={AllProducts} />
         </Switch>
       </div>
     </Router>

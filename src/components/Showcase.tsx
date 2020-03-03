@@ -1,23 +1,13 @@
 import * as React from 'react';
-import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import ProductCard from './ProductCard';
+import BreadcrumbList from './BreadcrumbList';
 
 const Showcase = () => {
   return (
     <div className="bg-white border">
-      <div className="d-flex justify-content-between">
-        <Breadcrumb>
-          <BreadcrumbItem>
-            <a href="#">Home</a>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <a href="#">Grocery & Staples</a>
-          </BreadcrumbItem>
-          <BreadcrumbItem active>Atta & Other Flours</BreadcrumbItem>
-        </Breadcrumb>
-      </div>
+      <BreadcrumbList />
       <div className="px-3">
-        <p>Atta & Other Flours</p>
+        <p>Best Selling Items</p>
         <div className="d-flex product-grid flex-wrap py-2">
           <ProductCard />
           <ProductCard />
