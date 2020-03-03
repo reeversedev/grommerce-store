@@ -1,13 +1,19 @@
 import * as React from 'react';
 import ProductCard from './ProductCard';
 import BreadcrumbList from './BreadcrumbList';
+import { withRouter, RouteChildrenProps } from 'react-router-dom';
+import { capitalize } from '../utils/textUtility';
 
-const Showcase = () => {
+const Showcase = ({ location }: RouteChildrenProps) => {
+  const pageTitle = location.pathname
+    .split('-')
+    .join(' ')
+    .replace('/', '');
   return (
     <div className="bg-white border">
       <BreadcrumbList />
       <div className="px-3">
-        <p>Best Selling Items</p>
+        <p>{capitalize(pageTitle)}</p>
         <div className="d-flex product-grid flex-wrap py-2">
           <ProductCard />
           <ProductCard />
@@ -27,4 +33,4 @@ const Showcase = () => {
   );
 };
 
-export default Showcase;
+export default withRouter(Showcase);
