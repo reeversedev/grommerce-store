@@ -9,7 +9,7 @@ const AllProducts = () => {
         <div className="w-25 d-none d-lg-block">
           <CategoryList />
         </div>
-        <div className="w-lg-75">
+        <div className="w-lg-75 w-100">
           <Showcase />
         </div>
       </div>

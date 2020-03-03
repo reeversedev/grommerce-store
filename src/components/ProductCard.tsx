@@ -28,9 +28,9 @@ const ProductCard = () => {
           <CardSubtitle className="mb-2 text-muted">
             {product.volume}
           </CardSubtitle>
-          <div className="d-flex align-items-center justify-content-between">
+          <div className="d-flex flex-lg-row flex-column align-items-lg-center justify-content-between">
             <CardText className="font-weight-bold mb-0">
-              {product.price}
+              &#8377; {product.price}
             </CardText>
             <Button
               className="add-to-cart"
@@ -39,7 +39,7 @@ const ProductCard = () => {
                 dispatch(openCart());
               }}
             >
-              Add to Cart
+              Add
             </Button>
           </div>
         </CardBody>

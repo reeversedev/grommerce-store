@@ -19,7 +19,6 @@
 }
 
 button.add-to-cart {
-  border-radius: 25px;
   color: #e96125;
   background-color: #fff;
   border: 1px solid #e96125;
@@ -40,4 +39,11 @@ button.add-to-cart {
 
 .click {
   cursor: pointer;
+}
+
+@media screen and (max-width: 425px) {
+  .product-grid .product-wrapper {
+    width: 50%;
+    margin: 0px;
+  }
 }
