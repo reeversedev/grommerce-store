@@ -9,6 +9,8 @@ const devMode = process.env.NODE_ENV !== 'production';
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
 module.exports = {
   context: __dirname + '/src',
   entry: path.join(__dirname, './src/index.tsx'),
@@ -31,6 +33,7 @@ module.exports = {
       chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
     }),
     htmlWebpackPlugin,
+    new UglifyJSPlugin(),
     new BundleAnalyzerPlugin({
       analyzerMode: 'disabled',
       generateStatsFile: true,
@@ -47,7 +50,10 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            presets: [['env', { modules: false }], 'react']
+          }
         },
         exclude: /node_modules/
       },
