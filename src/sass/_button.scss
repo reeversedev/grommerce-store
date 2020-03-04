@@ -17,6 +17,16 @@
   cursor: pointer;
 }
 
+a.btn--outline {
+  background-color: inherit;
+  border: 1px solid #e96125;
+  border-radius: 20px;
+  color: #e96125;
+  padding: 5px;
+  margin: 5px;
+  display: inline-block;
+}
+
 @media screen and (max-width: 320px) {
   .slider-header {
     p {

@@ -41,7 +41,20 @@ button.add-to-cart {
   cursor: pointer;
 }
 
-@media screen and (max-width: 425px) {
+.card-footer {
+  padding: 0;
+  background-color: inherit;
+  border: 0px;
+}
+
+@media screen and (max-width: 320px) {
+  .product-grid .product-wrapper {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 425px) {
   .product-grid .product-wrapper {
     width: 50%;
     margin: 0px;
