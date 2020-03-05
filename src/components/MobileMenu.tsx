@@ -15,7 +15,15 @@ const MobileMenu = () => {
       >
         Welcome!
       </ModalHeader>
-      <ModalBody>Hello World</ModalBody>
+      <ModalBody>
+        <ul className="mobile-menu-list">
+          <li>Login</li>
+          <li>My Addresses</li>
+          <li>My Orders</li>
+          <li>My Cart</li>
+          <li>My Wallet</li>
+        </ul>
+      </ModalBody>
     </Modal>
   );
 };
