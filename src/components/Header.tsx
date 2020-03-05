@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { openCart, closeCart } from '../redux/actions';
+import { openCart, closeCart, openMobileMenu } from '../redux/actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Product } from '../../utils/cart';
@@ -27,7 +27,10 @@ export const Header: React.FC = () => {
             />
           </Link>
           <div className="header-item">
-            <HamburgerButton className="d-flex d-md-flex d-lg-none" />
+            <HamburgerButton
+              className="d-flex d-md-flex d-lg-none"
+              onClick={() => dispatch(openMobileMenu())}
+            />
           </div>
           <input
             type="text"
